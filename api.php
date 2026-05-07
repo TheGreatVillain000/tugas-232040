@@ -1,6 +1,6 @@
 <?php
 // ─────────────────────────────────────────────────────────────
-//  API Backend – tugas-232013
+//  API Backend – tugas-232040
 //  Hosting: Railway + Cloudflare R2 Storage
 // ─────────────────────────────────────────────────────────────
 error_reporting(E_ALL);
@@ -176,7 +176,7 @@ switch ($action) {
 
     // ── LIST ─────────────────────────────────────────────────
     case 'list':
-        $result = $conn->query("SELECT * FROM youtube_232013 ORDER BY id DESC");
+        $result = $conn->query("SELECT * FROM youtube_232040 ORDER BY id DESC");
 
         if (!$result) {
             http_response_code(500);
@@ -260,7 +260,7 @@ switch ($action) {
         $videoUrl = $r2PublicUrl . '/' . $videoKey;
 
         $stmt = $conn->prepare(
-            "INSERT INTO youtube_232013 (title, thumbnail, video) VALUES (?, ?, ?)"
+            "INSERT INTO youtube_232040 (title, thumbnail, video) VALUES (?, ?, ?)"
         );
         $stmt->bind_param('sss', $title, $thumbUrl, $videoUrl);
 
@@ -292,7 +292,7 @@ switch ($action) {
             break;
         }
 
-        $stmt = $conn->prepare("SELECT * FROM youtube_232013 WHERE id = ?");
+        $stmt = $conn->prepare("SELECT * FROM youtube_232040 WHERE id = ?");
         $stmt->bind_param('i', $id);
         $stmt->execute();
         $oldData = $stmt->get_result()->fetch_assoc();
@@ -373,7 +373,7 @@ switch ($action) {
         }
 
         $stmt = $conn->prepare(
-            "UPDATE youtube_232013 SET title = ?, thumbnail = ?, video = ? WHERE id = ?"
+            "UPDATE youtube_232040 SET title = ?, thumbnail = ?, video = ? WHERE id = ?"
         );
         $stmt->bind_param('sssi', $title, $thumbUrl, $videoUrl, $id);
 
@@ -397,7 +397,7 @@ switch ($action) {
             break;
         }
 
-        $stmt = $conn->prepare("SELECT thumbnail, video FROM youtube_232013 WHERE id = ?");
+        $stmt = $conn->prepare("SELECT thumbnail, video FROM youtube_232040 WHERE id = ?");
         $stmt->bind_param('i', $id);
         $stmt->execute();
         $data = $stmt->get_result()->fetch_assoc();
@@ -415,7 +415,7 @@ switch ($action) {
         deleteFromR2($thumbKey);
         deleteFromR2($videoKey);
 
-        $stmt = $conn->prepare("DELETE FROM youtube_232013 WHERE id = ?");
+        $stmt = $conn->prepare("DELETE FROM youtube_232040 WHERE id = ?");
         $stmt->bind_param('i', $id);
 
         if ($stmt->execute()) {
