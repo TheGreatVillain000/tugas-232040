@@ -24,7 +24,7 @@ $db_host = getenv('MYSQLHOST')     ?: 'mysql.railway.internal';
 $db_name = getenv('MYSQLDATABASE') ?: 'railway';
 $db_port = (int)(getenv('MYSQLPORT') ?: 3306);
 $db_user = getenv('MYSQLUSER')     ?: 'root';
-$db_pass = getenv('MYSQLPASSWORD') ?: 'hITOWEbxOZmYvNiRUxneBBWfMXfOUkvp';
+$db_pass = getenv('MYSQLPASSWORD') ?: 'ptAnsOLeLfxvBJRhnweqwqqjKIdxsOuC';
 
 // ── Konfigurasi Cloudflare R2 ────────────────────────────────
 $r2AccessKey  = getenv('R2_ACCESS_KEY_ID')     ?: '';

@@ -27558,7 +27558,7 @@ $S:2}
 A.asl.prototype={
 $1(a){var s=A.d6().b
 s=s==null?null:s.canvasKitBaseUrl
-return(s==null?"https://www.gstatic.com/flutter-canvaskit/e4b8dca3f1b4ede4c30371002441c88c12187ed6/":s)+a},
+return(s==null?"https://www.gstatic.com/flutter-canvaskit/425cfb54d01a9472b3e81d9e76fd63a4a44cfbcb/":s)+a},
 $S:99}
 A.Lr.prototype={
 gB(a){var s=this.a
@@ -88191,7 +88191,7 @@ var $async$m6=A.G(function(a,b){if(a===1){p.push(b)
 s=q}for(;;)switch(s){case 0:n.ae(new A.am8(n))
 q=3
 s=6
-return A.L(A.aSf(A.eW("https://tugas-232013-production.up.railway.app/api.php?action=list")).wc(B.ER),$async$m6)
+return A.L(A.aSf(A.eW("https://tugas-232040-production.up.railway.app/api.php?action=list")).wc(B.ER),$async$m6)
 case 6:m=b
 if(m.b===200){j=m
 l=B.cf.e0(A.atd(A.asr(j.e)).e0(j.w))
@@ -88252,7 +88252,7 @@ return A.L(j.kE(A.aIU(null,null,h,!0,null,new A.am6(a),f,!1,null,null,i,B.A7,!0,
 case 3:if(c!==!0){s=1
 break}p=5
 s=8
-return A.L(A.aSU(A.eW("https://tugas-232013-production.up.railway.app/api.php?action=delete&id="+a.a)),$async$tA)
+return A.L(A.aSU(A.eW("https://tugas-232040-production.up.railway.app/api.php?action=delete&id="+a.a)),$async$tA)
 case 8:m=c
 if(m.b===200){f=m
 l=B.cf.e0(A.atd(A.asr(f.e)).e0(f.w))
@@ -88381,7 +88381,7 @@ $0(){return this.a.aiz(this.b)},
 $S:0}
 A.anw.prototype={
 $2(a,b){var s,r,q,p,o=null,n=this.a.c,m=n.c
-m=A.eS(new A.rU(A.aAO(o,o,new A.to(B.c.bz(m,"http")?m:"https://tugas-232013-production.up.railway.app/thumbnail/"+m,1,o,B.WL)),new A.anu(),new A.anv(),B.iW,o),b.d-76,o)
+m=A.eS(new A.rU(A.aAO(o,o,new A.to(B.c.bz(m,"http")?m:"https://tugas-232040-production.up.railway.app/thumbnail/"+m,1,o,B.WL)),new A.anu(),new A.anv(),B.iW,o),b.d-76,o)
 s=A.W(a).ok.ax
 s=A.co("Video Database",o,o,o,s==null?o:s.VX(B.aU,B.cm),o,o)
 r=A.W(a).ok.x
@@ -88445,7 +88445,7 @@ break}if(m.f==null){m.js("Pilih file video terlebih dahulu!")
 s=1
 break}m.ae(new A.ai6(m))
 p=4
-l=A.aA9("POST",A.eW("https://tugas-232013-production.up.railway.app/api.php?action=add"))
+l=A.aA9("POST",A.eW("https://tugas-232040-production.up.railway.app/api.php?action=add"))
 l.x.m(0,"title",d)
 g=l.y
 f=m.e
@@ -88569,7 +88569,7 @@ if(J.cf(l)===0){m.js("Title tidak boleh kosong!")
 s=1
 break}m.ae(new A.akL(m))
 p=4
-k=A.aA9("POST",A.eW("https://tugas-232013-production.up.railway.app/api.php?action=update&id="+m.a.c.a))
+k=A.aA9("POST",A.eW("https://tugas-232040-production.up.railway.app/api.php?action=update&id="+m.a.c.a))
 k.x.m(0,"title",l)
 e=m.e
 s=e!=null?7:8
@@ -88666,7 +88666,7 @@ A.Gn.prototype={
 az(){var s,r,q=this
 q.aO()
 s=q.a.c.d
-s=A.eW(B.c.bz(s,"http")?s:"https://tugas-232013-production.up.railway.app/video/"+s).k(0)
+s=A.eW(B.c.bz(s,"http")?s:"https://tugas-232040-production.up.railway.app/video/"+s).k(0)
 r=$.au()
 q.d!==$&&A.aT()
 r=q.d=new A.Cy(s,B.WG,r)
