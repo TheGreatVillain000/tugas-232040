@@ -203,8 +203,17 @@ switch ($action) {
 
         // Validasi thumbnail
         if (!isset($_FILES['thumbnail']) || $_FILES['thumbnail']['error'] !== UPLOAD_ERR_OK) {
+            $errCode = $_FILES['thumbnail']['error'] ?? 'MISSING';
+            $message = 'Upload thumbnail gagal. Error Code: ' . $errCode;
+            
+            // Penjelasan Error Code PHP
+            if ($errCode === 1) $message .= " (File melewati upload_max_filesize di php.ini)";
+            if ($errCode === 2) $message .= " (File melewati MAX_FILE_SIZE di form HTML)";
+            if ($errCode === 3) $message .= " (File hanya terupload sebagian)";
+            if ($errCode === 4) $message .= " (Tidak ada file yang diterima)";
+
             http_response_code(400);
-            echo json_encode(['success' => false, 'message' => 'Upload thumbnail gagal.']);
+            echo json_encode(['success' => false, 'message' => $message]);
             break;
         }
 
