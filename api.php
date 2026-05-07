@@ -67,7 +67,7 @@ function uploadToR2(string $localPath, string $r2Key, string $contentType): bool
 
     $canonicalHeaders = "content-type:{$contentType}\nhost:{$host}\nx-amz-content-sha256:{$payloadHash}\nx-amz-date:{$amzDate}\n";
     $signedHeaders    = 'content-type;host;x-amz-content-sha256;x-amz-date';
-    $canonicalRequest = implode("\n", ['PUT', "/{$r2BucketName}/{$r2Key}", '', $canonicalHeaders, $signedHeaders, $payloadHash]);
+    $canonicalRequest = implode("\n", ['PUT', "/{$r2Key}", '', $canonicalHeaders, $signedHeaders, $payloadHash]);
 
     $credentialScope = "{$dateStamp}/{$region}/{$service}/aws4_request";
     $stringToSign    = implode("\n", ['AWS4-HMAC-SHA256', $amzDate, $credentialScope, hash('sha256', $canonicalRequest)]);
@@ -127,7 +127,7 @@ function deleteFromR2(string $r2Key): void {
     $signedHeaders    = 'host;x-amz-content-sha256;x-amz-date';
     $canonicalRequest = implode("\n", [
         'DELETE',
-        "/{$r2BucketName}/{$r2Key}",
+        "/{$r2Key}",
         '',
         $canonicalHeaders,
         $signedHeaders,
